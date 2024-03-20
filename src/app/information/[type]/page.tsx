@@ -64,7 +64,7 @@ export default async function RegistrationTypes({
   return (
     <div className="container mt-16 space-y-6 p-10 pb-10">
       <div className="space-y-0.5">
-        <h2 className="text-2xl font-bold tracking-tight">
+        <h2 className="font-serif text-2xl font-medium tracking-wide">
           {registrationType.title}
         </h2>
         <p className="text-muted-foreground">{registrationType.description}</p>
