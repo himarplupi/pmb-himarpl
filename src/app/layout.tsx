@@ -62,7 +62,7 @@ const fontSerif = localFont({
 export const metadata = {
   title: "PMB | HIMARPL",
   description:
-    "Penerimaan Mahasiswa Baru (PMB) RPL UPI: Informasi pendaftaran, jadwal, dan syarat PMB program studi RPL UPI Kampus di Cibiru.",
+    "Penerimaan Mahasiswa Baru (PMB) RPL UPI: Informasi pendaftaran, jadwal, dan syarat PMB program studi RPL Kampus UPI di Cibiru.",
   icons: [
     {
       rel: "icon",
@@ -77,22 +77,20 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={cn(
-          "bg-background min-h-screen font-sans antialiased",
+          "bg-background min-h-screen font-sans antialiased ",
           fontSans.variable,
           fontSerif.variable,
         )}
       >
-        <ScrollArea className="h-screen">
-          <TRPCReactProvider>
-            <NavBar />
-            {children}
-          </TRPCReactProvider>
+        <TRPCReactProvider>
+          <NavBar />
+          {children}
+        </TRPCReactProvider>
 
-          <Toaster />
-        </ScrollArea>
+        <Toaster />
       </body>
     </html>
   );
