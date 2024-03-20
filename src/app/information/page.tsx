@@ -20,7 +20,7 @@ const jalurMasuk = [
     description: "Seleksi Nasional Berbasis Prestasi",
     content:
       "Seleksi Nasional Berbasis Prestasi (SNBP) dilakukan berdasarkan hasil penelusuran rapor serta prestasi akademik dan non akademik siswa.",
-    url: "/information/snbp",
+    href: "/information/snbp",
   },
   {
     id: "snbt",
@@ -28,7 +28,7 @@ const jalurMasuk = [
     description: "Seleksi Nasional Berbasis Tes",
     content:
       "Seleksi Nasional Berbasis Tes (SNBT) 2024 dilakukan berdasarkan hasil Ujian Tulis Berbasis Komputer (UTBK) dan dapat ditambah dengan kriteria lain.",
-    url: "/information/snbt",
+    href: "/information/snbt",
   },
   {
     id: "sm-upi-reguler",
@@ -36,7 +36,7 @@ const jalurMasuk = [
     description: "Seleksi Mandiri UPI Reguler",
     content:
       "Berdasarkan hasil kombinasi hasil Tes Psikologis Bidang Minat, Tes Potensi Skolastik, Tes Literasi dan Tes Penalaran Matematika yang dilakukan oleh UPI.",
-    url: "/information/sm-upi-reguler",
+    href: "/information/sm-upi-reguler",
   },
   {
     id: "sm-upi-pi",
@@ -44,7 +44,7 @@ const jalurMasuk = [
     description: "Seleksi Mandiri UPI Prestasi Istimewa",
     content:
       "Berdasarkan prestasi karya seni atau teknologi monumental, hafidz Al-Qur'an minimal 15 Juz, atau siswa yang memperoleh medali dalam bidang akademik maupun non-akademik",
-    url: "/information/sm-upi-pi",
+    href: "/information/sm-upi-pi",
   },
 ];
 
@@ -162,7 +162,7 @@ export default async function InformationPage() {
                 </CardContent>
               </div>
               <CardFooter>
-                <Link href={jalur.url} className="w-full">
+                <Link href={jalur.href} className="w-full">
                   <Button className="w-full" variant="outline">
                     Selengkapnya
                   </Button>
