@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import * as React from "react";
-import { useRouter } from "next/navigation";
-import { LucideHome, UsersRound, Waypoints } from "lucide-react";
+import { useRouter, usePathname } from "next/navigation";
 import {
   Sheet,
   SheetContent,
@@ -11,10 +11,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import logo from "@/images/logo.png";
 
 export function NavSheet({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
 
   const href = (path: string) => {
@@ -39,14 +41,70 @@ export function NavSheet({ children }: { children: React.ReactNode }) {
         </SheetHeader>
 
         <div className="mt-3 grid grid-cols-1 gap-y-2">
-          {/* <Button
-            variant="outline"
-            onClick={() => href("/")}
-            className="justify-start gap-x-2"
+          <Link
+            onClick={() => setOpen(false)}
+            href="/"
+            className={cn(
+              "flex items-center text-muted-foreground transition hover:text-muted-foreground/80",
+              pathname === "/" && "text-foreground hover:text-foreground/80",
+            )}
           >
-            <LucideHome className="ml-2 h-4 w-4" />
-            Overview
-          </Button> */}
+            Beranda
+          </Link>
+          <Link
+            onClick={() => setOpen(false)}
+            href="/information"
+            className={cn(
+              "flex items-center text-muted-foreground transition hover:text-foreground/75",
+              pathname === "/information" &&
+                "text-foreground hover:text-foreground/80",
+            )}
+          >
+            Info Pendaftaran
+          </Link>
+          <Link
+            onClick={() => setOpen(false)}
+            href="/news"
+            className={cn(
+              "flex items-center text-muted-foreground transition hover:text-foreground/75",
+              pathname === "/news" &&
+                "text-foreground hover:text-foreground/80",
+            )}
+          >
+            Berita
+          </Link>
+          <Link
+            onClick={() => setOpen(false)}
+            href="/software-engineering"
+            className={cn(
+              "flex items-center text-muted-foreground transition hover:text-foreground/75",
+              pathname === "/software-engineering" &&
+                "text-foreground hover:text-foreground/80",
+            )}
+          >
+            Mengenal RPL
+          </Link>
+          <Link
+            onClick={() => setOpen(false)}
+            href="/faq"
+            className={cn(
+              "flex items-center text-muted-foreground transition hover:text-foreground/75",
+              pathname === "/faq" && "text-foreground hover:text-foreground/80",
+            )}
+          >
+            FAQ
+          </Link>
+          <Link
+            onClick={() => setOpen(false)}
+            href="/contact"
+            className={cn(
+              "flex items-center text-muted-foreground transition hover:text-foreground/75",
+              pathname === "/contact" &&
+                "text-foreground hover:text-foreground/80",
+            )}
+          >
+            Kontak
+          </Link>
         </div>
       </SheetContent>
     </Sheet>
