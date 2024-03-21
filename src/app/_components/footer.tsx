@@ -17,35 +17,50 @@ export function Footer() {
             <Separator orientation="vertical" />
             <ul className="flex flex-col gap-y-1">
               <li>
-                <Link href="/" className="text-muted-foreground">
+                <Link
+                  href="/"
+                  className="text-muted-foreground hover:underline"
+                >
                   Beranda
                 </Link>
               </li>
               <li>
-                <Link href="/information" className="text-muted-foreground">
+                <Link
+                  href="/information"
+                  className="text-muted-foreground hover:underline"
+                >
                   Info Pendaftaran
                 </Link>
               </li>
               <li>
-                <Link href="/news" className="text-muted-foreground">
+                <Link
+                  href="/news"
+                  className="text-muted-foreground hover:underline"
+                >
                   Berita
                 </Link>
               </li>
               <li>
                 <Link
                   href="/software-engineering"
-                  className="text-muted-foreground"
+                  className="text-muted-foreground hover:underline"
                 >
                   Mengenal RPL
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-muted-foreground">
+                <Link
+                  href="/faq"
+                  className="text-muted-foreground hover:underline"
+                >
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground">
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:underline"
+                >
                   Kontak
                 </Link>
               </li>

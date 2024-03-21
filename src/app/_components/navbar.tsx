@@ -17,31 +17,26 @@ export function NavBar() {
   return (
     !hideNavbarOnRoutes.includes(pathname) && (
       <nav className="fixed top-0 z-10 w-full drop-shadow-md">
-        <div className="bg-primary-foreground container flex items-center justify-between py-2 backdrop-blur-md">
+        <div className="container flex items-center justify-between bg-primary-foreground py-2 backdrop-blur-md">
           <div className="flex items-center gap-x-5">
             <div className="flex items-center gap-x-2">
-              <Image
-                src={logo}
-                alt="HIMARPL Logo"
-                width={40}
-                className="hidden md:block"
-              />
-              <Link href="/" className="hidden text-2xl font-bold md:block ">
-                {"PMB"}
-              </Link>
-
               <NavSheet>
                 <Button size="icon" variant="ghost">
                   <Menu className="h-6 w-6" />
                 </Button>
               </NavSheet>
+
+              <Image src={logo} alt="HIMARPL Logo" width={40} className="" />
+              <Link href="/" className="mt-1 font-serif text-2xl font-bold">
+                {"PMB"}
+              </Link>
             </div>
 
             <div className="hidden items-center gap-x-5 md:flex">
               <Link
                 href="/"
                 className={cn(
-                  "text-muted-foreground hover:text-muted-foreground/80 flex items-center transition",
+                  "flex items-center text-muted-foreground transition hover:text-muted-foreground/80",
                   pathname === "/" &&
                     "text-foreground hover:text-foreground/80",
                 )}
@@ -51,7 +46,7 @@ export function NavBar() {
               <Link
                 href="/information"
                 className={cn(
-                  "text-muted-foreground hover:text-foreground/75 flex items-center transition",
+                  "flex items-center text-muted-foreground transition hover:text-foreground/75",
                   pathname === "/information" &&
                     "text-foreground hover:text-foreground/80",
                 )}
@@ -61,7 +56,7 @@ export function NavBar() {
               <Link
                 href="/news"
                 className={cn(
-                  "text-muted-foreground hover:text-foreground/75 flex items-center transition",
+                  "flex items-center text-muted-foreground transition hover:text-foreground/75",
                   pathname === "/news" &&
                     "text-foreground hover:text-foreground/80",
                 )}
@@ -71,7 +66,7 @@ export function NavBar() {
               <Link
                 href="/software-engineering"
                 className={cn(
-                  "text-muted-foreground hover:text-foreground/75 flex items-center transition",
+                  "flex items-center text-muted-foreground transition hover:text-foreground/75",
                   pathname === "/software-engineering" &&
                     "text-foreground hover:text-foreground/80",
                 )}
@@ -81,7 +76,7 @@ export function NavBar() {
               <Link
                 href="/faq"
                 className={cn(
-                  "text-muted-foreground hover:text-foreground/75 flex items-center transition",
+                  "flex items-center text-muted-foreground transition hover:text-foreground/75",
                   pathname === "/faq" &&
                     "text-foreground hover:text-foreground/80",
                 )}
@@ -91,7 +86,7 @@ export function NavBar() {
               <Link
                 href="/contact"
                 className={cn(
-                  "text-muted-foreground hover:text-foreground/75 flex items-center transition",
+                  "flex items-center text-muted-foreground transition hover:text-foreground/75",
                   pathname === "/contact" &&
                     "text-foreground hover:text-foreground/80",
                 )}
