@@ -1,5 +1,10 @@
 import { notFound } from "next/navigation";
 import { Layout } from "./_components/layout";
+import type { Metadata } from "next";
+
+type Props = {
+  params: { type: string };
+};
 
 export type RegistrationItem = {
   id: string;
@@ -884,6 +889,15 @@ selanjutnya dilakukan berdasarkan tahap berikut:
     ],
   },
 ];
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const registrationType = registrationTypes.find((t) => t.id === params.type);
+
+  return {
+    title: registrationType?.title + " | HIMARPL",
+    description: registrationType?.description,
+  };
+}
 
 export default async function RegistrationTypes({
   params: { type },
