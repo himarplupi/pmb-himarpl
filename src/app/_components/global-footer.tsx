@@ -139,7 +139,7 @@ function Pranala() {
             className="text-sm text-muted-foreground hover:underline"
             href="https://himarpl.com"
           >
-            HIMARPL
+            Himpunan Mahasiwa Rekayasa Perangkat Lunak
           </Link>
         </li>
         <li>
@@ -148,7 +148,7 @@ function Pranala() {
             className="text-sm text-muted-foreground hover:underline"
             href="https://blog.himarpl.com"
           >
-            Blog
+            Blog HIMARPL
           </Link>
         </li>
         <li>
@@ -157,7 +157,25 @@ function Pranala() {
             className="text-sm text-muted-foreground hover:underline"
             href="https://pmb.himarpl.com"
           >
-            PMB
+            Penerimaan Mahasiswa Baru HIMARPL
+          </Link>
+        </li>
+        <li>
+          <Link
+            target="_blank"
+            className="text-sm text-muted-foreground hover:underline"
+            href="https://upi.edu/"
+          >
+            Universitas Pendidikan Indonesia
+          </Link>
+        </li>
+        <li>
+          <Link
+            target="_blank"
+            className="text-sm text-muted-foreground hover:underline"
+            href="https://rpl.upi.edu/"
+          >
+            Rekayasa Perangkat Lunak UPI
           </Link>
         </li>
       </ul>

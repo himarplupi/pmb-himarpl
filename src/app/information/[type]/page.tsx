@@ -528,6 +528,9 @@ export const registrationTypes: RegistrationType[] = [
         href: "/information/sm-upi-reguler/mekanisme",
         content: `
         <h2>Mekanisme Pendaftaran</h2>
+        <p>
+        Setelah peserta masuk pada laman <a href="https://pmb.upi.edu">https://pmb.upi.edu</a>, proses pendaftaran selanjutnya dilakukan berdasarkan tahap berikut: 
+        </p>
         <ol>
             <li>
                 <strong>Ambil Nomor Bayar</strong><br>
@@ -565,7 +568,7 @@ export const registrationTypes: RegistrationType[] = [
             Biaya yang sudah dibayarkan tidak dapat ditarik kembali dengan alasan apa pun.
           </li>
         </ul>
-        <h2>Biaya Pendidikan (Rekayasa Perangkat Lunak Kampus UPI di Cibiru) 2023</h2>
+        <h2>Biaya Pendidikan SM-UPI (Rekayasa Perangkat Lunak Kampus UPI di Cibiru) 2023</h2>
         <table>
           <thead>
             <tr>
@@ -609,13 +612,16 @@ export const registrationTypes: RegistrationType[] = [
         title: "Berkas",
         href: "/information/sm-upi-reguler/berkas",
         content: `
-        <h2>Berkas SM UPI 2023</h2>
+        <h2>Berkas SM-UPI Reguler 2023</h2>
         <ul>
           <li>
-            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/panduan-sm-upi-2023.pdf">Panduan Seleksi Mandiri UPI 2023</a>
+            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/panduan-sm-upi-2023.pdf">Panduan Seleksi Mandiri UPI Reguler 2023</a>
           </li>
           <li>
-            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/biaya-pendidikan-sm-upi-2023.pdf">Biaya Pendidikan Seleksi Mandiri UPI 2023</a>
+            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/biaya-pendidikan-sm-upi-2023.pdf">Biaya Pendidikan Seleksi Mandiri UPI Reguler 2023</a>
+          </li>
+          <li>
+            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/tahapan-registrasi-sm-upi-2023.pdf">Tahapan Registrasi Seleksi Mandiri UPI 2023</a>
           </li>
         </ul>
         `,
@@ -633,7 +639,246 @@ export const registrationTypes: RegistrationType[] = [
         title: "Gambaran Umum",
         href: "/information/sm-upi-pi",
         content: `
-          <h2>Seleksi Mandiri UPI</h2>
+          <h2>Seleksi Mandiri UPI Prestasi Istimewa</h2>
+          <p>
+            Seleksi calon mahasiswa baru berdasarkan Prestasi Istimewa (PI) diperlukan Universitas
+            Pendidikan Indonesia untuk meningkatkan perolehan prestasi akademik dan non-akademik
+            mahasiswa UPI pada tingkat nasional maupun internasional. Selain itu merupakan bentuk
+            penghargaan kepada siswa yang berprestasi dan menunjukan keunggulan dengan
+            mendapatkan pengakuan dari masyarakat.
+          </p>
+          <p>
+            Siswa yang dapat mendaftar pada seleksi PI adalah siswa yang memiliki prestasi karya seni
+            atau teknologi monumental yang mendapatkan pengakuan masyarakat, hafidz Al-Qur’an
+            minimal 15 Juz, atau siswa yang memperoleh medali dalam bidang akademik maupun nonakademik pada kompetisi tingkat kabupaten/kota, provinsi, nasional dan internasional seperti
+            peraih medali Olimpiade, MTQ, dan pertandingan olahraga. 
+          </p>
+          <h2>Tujuan</h2>
+          <p>
+            Penerimaan mahasiswa baru UPI melalui jalur Prestasi Istimewa (PI) bertujuan
+            memberikan penghargaan kepada siswa yang memiliki prestasi istimewa yang
+            ditunjukan melalui karya seni atau teknologi monumental yang mendapat pengakuan
+            masyarakat atau berupa prestasi akademik maupun non-akademik pada kompetisi di
+            tingkat nasional maupun internasional. Melalui seleksi calon mahasiswa baru PI ini
+            diharapkan dapat meningkatkan keunggulan dan prestasi mahasiswa UPI pada tingkat
+            nasional maupun internasional. 
+          </p>
+        `,
+      },
+      {
+        id: "waktu-pendaftaran",
+        title: "Waktu Pendaftaran",
+        href: "/information/sm-upi-pi/waktu-pendaftaran",
+        content: `
+          <h2>Waktu Pendaftaran</h2>
+          <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kegiatan</th>
+                    <th>Tanggal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Pengambilan Nomor Bayar</td>
+                    <td>16 Mei - 30 Juni 2023</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Pembayaran Biaya Pendaftaran</td>
+                    <td>16 Mei 2023 - 30 Juni 2023 Pukul 15.00 WIB</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pengisian biodata peserta</td>
+                    <td>16 Mei 2023 - 30 Juni 2023 Pukul 23.59 WIB</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Pencetakan Kartu Peserta</td>
+                    <td>16 Mei 2023 - 30 Juni 2023 Pukul 23.59 WIB</td>
+                </tr>
+            </tbody>
+        </table>
+        `,
+      },
+      {
+        id: "persyaratan",
+        title: "Persyaratan",
+        href: "/information/sm-upi-pi/persyaratan",
+        content: `
+          <h2>Persyaratan Umum</h2>
+          <ul>
+            <li>
+            Siswa memiliki karya seni, desain dan/atau teknologi monumental yang
+            mendapatkan pengakuan masyarakat dibuktikan dengan surat keterangan
+            dan/atau sertifikat dari lembaga yang berwenang (seperti Kepala Sekolah)
+            dan/atau informasi dari media (dibuktikan dengan <em>link web</em> yang relevan); atau 
+            </li>
+            <li>
+            Siswa <em>hafidz</em> Al-Qur'an minimal 15 Juz dibuktikan dengan Sertifikat/Surat Keterangan dan uji kinerja khusus; atau
+            </li>
+            <li>
+            Siswa memiliki prestasi juara berupa medali (emas, perak atau perunggu) atau
+            ranking (1, 2 atau 3) lima tahun terakhir pada olimpiade/kejuaraan akademik,
+            kejuaraan olahraga, seni, desain, dan/atau keagamaan [seperti Musabaqoh
+            Tilawatil Quran (MTQ)] tingkat provinsi/nasional/internasional dibuktikan
+            dengan surat keterangan dan/atau sertifikat dari lembaga yang berwenang dan
+            uji validasi khusus
+            </li>
+            <li>
+            Lulusan SMA/MA/SMK/Paket C tahun 2023, 2022, 2021 dan 2020. 
+            </li>
+            <li>
+            Mempunyai kesehatan fisik dan mental yang tidak mengganggu kelancaran belajar di program studi pilihannya.
+            </li>
+          </ul>
+          <h2>Persyaratan Khusus</h2>
+          <p>
+          Pada beberapa program studi, peserta harus memenuhi persyaratan khusus sebagai
+          berikut:
+          </p>
+          <ul>
+              <li>
+              Pendaftar yang memilih program studi Pendidikan IPA (<em>International Program on Science Education</em>/IPSE) mampu berbahasa Inggris secara aktif
+                (perkuliahan diselenggarakan dalam Bahasa Inggris).                 
+              </li>
+              <li>
+              Pendaftar yang memilih program studi Ilmu Pendidikan Agama Islam mampu membaca Alqur'an.
+              </li>
+          </ul>
+        `,
+      },
+      {
+        id: "ketentuan",
+        title: "Ketentuan",
+        href: "/information/sm-upi-pi/ketentuan",
+        content: `
+          <h2>Ketentuan Pendaftaran</h2>
+          <ol>
+              <li>
+                  Pendaftar PI hanya dapat memilih 1 (satu) Program Studi.
+              </li>
+              <li>
+                  Pendaftaran dilakukan secara daring (online) pada laman <a href="https://pmb.upi.edu" target="_blank">https://pmb.upi.edu</a>.
+              </li>
+              <li>
+                  Uang yang sudah disetor ke bank tidak dapat diminta kembali.
+              </li>
+              <li>
+                  Setiap pendaftar hanya diberikan satu kali kesempatan untuk melakukan pendaftaran secara daring (online).
+              </li>
+              <li>
+                  Jika peserta ingin mengubah pilihan program studi setelah proses pendaftaran selesai dilakukan, maka pendaftar harus melakukan proses dari awal serta melakukan pembayaran uang pendaftaran kembali ke bank.
+              </li>
+          </ol>
+        `,
+      },
+      {
+        id: "mekanisme",
+        title: "Mekanisme",
+        href: "/information/sm-upi-pi/mekanisme",
+        content: `
+<h2>Mekanisme Pendaftaran</h2>
+<p>
+Setelah peserta masuk pada laman <a href="http://app.pmb.upi.edu/sm-pi/" target="_blank">http://app.pmb.upi.edu/sm-pi/</a>, proses pendaftaran
+selanjutnya dilakukan berdasarkan tahap berikut: 
+</p>
+<ol>
+    <li>
+        <strong>Ambil Nomor Bayar</strong><br>
+        Peserta dapat meng-klik tombol "Ambil No Bayar" yang disediakan kemudian isikan data yang diminta untuk memperoleh nomor bayar.
+    </li>
+    <li>
+        <strong>Bayar Biaya Pendaftaran</strong><br>
+        Setelah mendapatkan Nomor Bayar, Pendaftar menyetorkan biaya pendaftaran dan seleksi masuk melalui Teller Bank Negera Indonesia (BNI), Bank Mandiri, Bank Jabar Banten (BJB) di cabang manapun atau dengan metode lain (seperti e-Banking dan melalui ATM) dengan menyebutkan/memasukkan Nomor Bayar PMB SM UPI. Setelah biaya disetorkan, peserta akan mendapatkan bukti pembayaran dan PIN.
+    </li>
+    <li>
+        <strong>Lengkapi Biodata sampai Memperoleh No Seleksi</strong><br>
+        Lengkapi biodata dengan cara log-in menggunakan nomor bayar dan PIN yang diperoleh, lanjutkan pengisian form sampai memperoleh nomor seleksi.
+    </li>
+    <li>
+        <strong>Cetak Kartu Peserta dan Cek Lokasi Ujian</strong><br>
+        Peserta harus mencetak kartu peserta (secara fisik) untuk diperlihatkan kepada pengawas saat pelaksanaan ujian. Kartu Peserta akan digunakan untuk syarat mengikuti ujian. Pada Kartu Peserta terdapat Informasi Jadwal dan Lokasi Ujian.
+    </li>
+    <li>
+        <strong>Cek Informasi Ujian</strong><br>
+        Peserta diharapkan dapat selalu mengakses laman <a href="https://pmb.upi.edu" target="_blank">https://pmb.upi.edu</a> dan akun pendaftaran masing-masing untuk mendapatkan informasi terbaru terkait ujian. Peserta juga dapat melihat informasi hasil tes seleksi melalui laman <a href="https://pmb.upi.edu" target="_blank">https://pmb.upi.edu</a> pada akun pendaftaran masing-masing.
+    </li>
+</ol>
+`,
+      },
+      {
+        id: "biaya",
+        title: "Biaya",
+        href: "/information/sm-upi-pi/biaya",
+        content: `
+        <h2>Biaya Pendaftaran 2023</h2>
+        <ul>
+          <li>
+            Biaya pendaftaran PI UPI 2023 adalah sebesar Rp 350.000,- (Tiga Ratus Lima Puluh Ribu Rupiah).
+          </li>
+          <li>
+            Biaya yang sudah dibayarkan tidak dapat ditarik kembali dengan alasan apa pun.
+          </li>
+        </ul>
+        <h2>Biaya Pendidikan SM-UPI (Rekayasa Perangkat Lunak Kampus UPI di Cibiru) 2023</h2>
+        <table>
+          <thead>
+            <tr>
+              <th align="center">No</th>
+              <th align="center">Nama</th>
+              <th align="center">Biaya</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center">1</td>
+              <td>Registrasi</td>
+              <td align="right">Rp 1.500.000,-</td>
+            </tr>
+            <tr>
+              <td align="center">2</td>
+              <td>Penyelenggara Pembelajaran</td>
+              <td align="right">Rp 5.460.000,-</td>
+            </tr>
+            <tr>
+              <td align="center">3</td>
+              <td>Pengembangan Fasilitas dan Mutu Akademik</td>
+              <td align="right">Rp 7.500.000,-</td>
+            </tr>
+            <tr>
+              <td align="center">4</td>
+              <td>Pengembangan Lembaga</td>
+              <td align="right">Rp 15.000.000,-</td>
+            </tr>
+            <tr>
+              <td align="center">5</td>
+              <td>Jumlah</td>
+              <td align="right">Rp 29.460.000,-</td>
+            </tr>
+          </tbody>
+        </table>`,
+      },
+      {
+        id: "berkas",
+        title: "Berkas",
+        href: "/information/sm-upi-pi/berkas",
+        content: `
+        <h2>Berkas SM-UPI Prestasi Istimewa 2023</h2>
+        <ul>
+          <li>
+            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/panduan-pi-upi-2023.pdf">Panduan Seleksi Mandiri UPI Prestasi Istimewa 2023</a>
+          </li>
+          <li>
+            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/biaya-pendidikan-sm-upi-2023.pdf">Biaya Pendidikan Seleksi Mandiri UPI Prestasi Istimewa 2023</a>
+          </li>
+          <li>
+            <a href="https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/pmb/tahapan-registrasi-sm-upi-2023.pdf">Tahapan Registrasi Seleksi Mandiri UPI 2023</a>
+          </li>
+        </ul>
         `,
       },
     ],
