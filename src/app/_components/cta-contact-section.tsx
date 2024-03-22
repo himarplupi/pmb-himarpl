@@ -26,7 +26,7 @@ export function CTAContactSection() {
       id="cta-contact"
       className="container mt-16 rounded-md bg-gradient-to-br from-[#295BFF] to-[#003bbf] py-16"
     >
-      <Card className="mx-auto drop-shadow-xl lg:w-[768px]">
+      <Card className="mx-auto flex min-h-72 flex-col justify-between drop-shadow-xl lg:w-[768px]">
         <CardHeader>
           <CardTitle className="font-serif text-4xl font-bold tracking-wide lg:text-center">
             Masih Bingung?
