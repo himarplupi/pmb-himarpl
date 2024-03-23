@@ -48,14 +48,14 @@ export function Footer() {
                   Mengenal RPL
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/faq"
                   className="text-muted-foreground hover:underline"
                 >
                   FAQ
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/contact"

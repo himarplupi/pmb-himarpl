@@ -1,3 +1,4 @@
+export * from "./contact-form";
 export * from "./cta-contact-section";
 export * from "./cta-news-section";
 export * from "./footer";
