@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  SiWhatsapp,
-  SiInstagram,
-  SiGmail,
-} from "@icons-pack/react-simple-icons";
-import { Mail } from "lucide-react";
+import { SiWhatsapp, SiInstagram } from "@icons-pack/react-simple-icons";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,

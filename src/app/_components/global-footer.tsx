@@ -119,7 +119,7 @@ function Alamat() {
       <h4 className="scroll-m-20 font-serif text-lg font-semibold tracking-wide">
         Alamat
       </h4>
-      <p className="text-sm leading-5 text-muted-foreground sm:w-64 md:w-96">
+      <p className="text-sm leading-4 text-muted-foreground sm:w-64 md:w-96">
         Ruang HIMARPL Gedung Sekretariat Jalan Raya Cibiru Km. 15 Bandung 40393
       </p>
     </div>
@@ -132,47 +132,47 @@ function Pranala() {
       <h4 className="scroll-m-20 font-serif text-lg font-semibold tracking-wide">
         Pranala
       </h4>
-      <ul>
-        <li>
+      <ul className="space-y-1">
+        <li className="overflow-hidden">
           <Link
             target="_blank"
-            className="text-sm text-muted-foreground hover:underline"
+            className="inline-block text-sm leading-4 text-muted-foreground hover:underline"
             href="https://himarpl.com"
           >
             Himpunan Mahasiwa Rekayasa Perangkat Lunak
           </Link>
         </li>
-        <li>
+        <li className="overflow-hidden">
           <Link
             target="_blank"
-            className="text-sm text-muted-foreground hover:underline"
+            className="inline-block text-sm leading-4 text-muted-foreground hover:underline"
             href="https://blog.himarpl.com"
           >
             Blog HIMARPL
           </Link>
         </li>
-        <li>
+        <li className="overflow-hidden">
           <Link
             target="_blank"
-            className="text-sm text-muted-foreground hover:underline"
+            className="inline-block text-sm leading-4 text-muted-foreground hover:underline"
             href="https://pmb.himarpl.com"
           >
             Penerimaan Mahasiswa Baru HIMARPL
           </Link>
         </li>
-        <li>
+        <li className="overflow-hidden">
           <Link
             target="_blank"
-            className="text-sm text-muted-foreground hover:underline"
+            className="inline-block text-sm leading-4 text-muted-foreground hover:underline"
             href="https://upi.edu/"
           >
             Universitas Pendidikan Indonesia
           </Link>
         </li>
-        <li>
+        <li className="overflow-hidden">
           <Link
             target="_blank"
-            className="text-sm text-muted-foreground hover:underline"
+            className="inline-block text-sm leading-4 text-muted-foreground hover:underline"
             href="https://rpl.upi.edu/"
           >
             Rekayasa Perangkat Lunak UPI
@@ -189,11 +189,11 @@ function MediaPartner() {
       <h4 className="scroll-m-20 font-serif text-lg font-semibold tracking-wide">
         Media Partner
       </h4>
-      <ul>
-        <li>
+      <ul className="space-y-1">
+        <li className="overflow-hidden">
           <Link
             target="_blank"
-            className="text-sm text-muted-foreground hover:underline"
+            className="inline-block text-sm leading-4 text-muted-foreground hover:underline"
             href="https://github.com/himarplupi/assets-himarpl/blob/main/media-partner/syarat-dan-ketentuan.md"
           >
             Syarat dan Ketentuan
