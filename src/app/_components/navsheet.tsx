@@ -84,7 +84,7 @@ export function NavSheet({ children }: { children: React.ReactNode }) {
           >
             Mengenal RPL
           </Link>
-          <Link
+          {/* <Link
             onClick={() => setOpen(false)}
             href="/faq"
             className={cn(
@@ -93,7 +93,7 @@ export function NavSheet({ children }: { children: React.ReactNode }) {
             )}
           >
             FAQ
-          </Link>
+          </Link> */}
           <Link
             onClick={() => setOpen(false)}
             href="/contact"

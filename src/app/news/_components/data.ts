@@ -44,3 +44,20 @@ export const articles = [
     publishedAt: new Date("2024-03-26 07:00:00"),
   },
 ];
+
+export const instagramPosts = [
+  {
+    id: "C42m9-kpT5C",
+    title: "Congratulations Raymico Fuji!",
+    href: "https://www.instagram.com/p/C42m9-kpT5C/",
+    content:
+      "Selamat kepada akang Raymico Fuji yang mendapatkan penghargaan IISMA 2024. Semoga ilmu nya selalu bermanfaat dan menjadi motivasi untuk lebih semangat 🔥",
+  },
+  {
+    id: "C4xg4qkJ4a6",
+    title: "Congratulations Calzy Akmal Indyramdhani!",
+    href: "https://www.instagram.com/p/C4xg4qkJ4a6/",
+    content:
+      "Selamat kepada kang Calzy Akmal Indyramdhani atas perolehan prestasi Juara 2 PILMAPRES Kampus UPI Cibiru. Semoga ilmu nya selalu bermanfaat dan menjadi motivasi untuk lebih semangat 🔥",
+  },
+];

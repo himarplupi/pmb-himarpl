@@ -73,7 +73,7 @@ export function NavBar() {
               >
                 Mengenal RPL
               </Link>
-              <Link
+              {/* <Link
                 href="/faq"
                 className={cn(
                   "flex items-center text-muted-foreground transition hover:text-foreground/75",
@@ -82,7 +82,7 @@ export function NavBar() {
                 )}
               >
                 FAQ
-              </Link>
+              </Link> */}
               <Link
                 href="/contact"
                 className={cn(

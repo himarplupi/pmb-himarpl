@@ -3,12 +3,13 @@ import { Circle } from "lucide-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { articles } from "@/app/news/_components/data";
+import { articles, instagramPosts } from "@/app/news/_components/data";
+import LogoHIMARPL from "@/images/logo.png";
 
 export default async function NewsPage() {
   return (
-    <main className="container flex min-h-screen flex-col gap-y-4">
-      <section id="news" className="mt-16 md:max-w-[786px]">
+    <main className="container mt-16 flex min-h-screen flex-col space-y-8 md:flex-row md:space-x-12 md:space-y-0">
+      <section id="news" className="md:flex-1">
         <h2 className="mt-2 scroll-m-20 text-balance border-b pb-2 font-serif text-4xl font-bold tracking-wide">
           Berita Terbaru
         </h2>
@@ -20,7 +21,10 @@ export default async function NewsPage() {
             >
               <span className="flex items-center gap-x-2">
                 <Avatar className="h-5 w-5">
-                  <AvatarImage src={article.author.image} alt="Avatar" />
+                  <AvatarImage
+                    src={article.author.image}
+                    alt={article.author.name + " picture"}
+                  />
                 </Avatar>
                 <span className="truncate text-sm text-muted-foreground">
                   {article.author.name}
@@ -71,6 +75,37 @@ export default async function NewsPage() {
           ))}
         </div>
       </section>
+      <aside className="hidden flex-col gap-y-2 md:flex md:w-1/5">
+        <h3 className="mt-6 scroll-m-20 font-serif text-2xl font-medium tracking-tight">
+          Postingan Instagram
+        </h3>
+
+        {instagramPosts.map((post) => (
+          <div key={post.id} className="flex flex-col gap-y-2 rounded py-2">
+            <span className="flex items-center gap-x-2">
+              <Avatar className="h-5 w-5">
+                <Image
+                  src={LogoHIMARPL}
+                  alt="Logo HIMARPL"
+                  width={20}
+                  height={20}
+                />
+              </Avatar>
+              <span className="truncate text-sm text-muted-foreground">
+                HIMARPL
+              </span>
+            </span>
+            <Link target="_blank" href={post.href}>
+              <h4 className="line-clamp-2 scroll-m-20 text-balance font-serif text-lg font-semibold capitalize leading-5 tracking-wide">
+                {post.title}
+              </h4>
+              <p className="line-clamp-4 text-balance text-xs leading-5 tracking-normal text-muted-foreground">
+                {post.content}
+              </p>
+            </Link>
+          </div>
+        ))}
+      </aside>
     </main>
   );
 }
