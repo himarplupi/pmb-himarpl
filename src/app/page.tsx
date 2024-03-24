@@ -1,12 +1,54 @@
 import HomeBG from "@/images/home-bg.jpg";
+import { CTAContactSection, Footer, GlobalFooter } from "@/app/_components";
 import Image from "next/image";
 import { Circle } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default async function HomePage() {
   return (
-    <main>
-      <BannerSection />
-    </main>
+    <>
+      <main className="space-y-8">
+        <BannerSection />
+
+        <section className="container ">
+          <h2 className="text-pretty font-serif text-4xl font-bold">
+            Informasi Jalur Masuk Resmi RPL UPI
+          </h2>
+          <p className="leading-7 tracking-wide text-muted-foreground md:w-[512px] [&:not(:first-child)]:mt-2">
+            Jalur masuk resmi PTN Universitas Pendidikan Indonesia tahun 2024
+            salah satunya adalah SNBT.
+          </p>
+          <div className="mt-4 flex flex-col justify-evenly gap-4 sm:flex-row md:w-[512px]">
+            <Link
+              href={"/information/snbt"}
+              className={cn(
+                buttonVariants(),
+                "w-full justify-start sm:justify-center",
+              )}
+            >
+              {"Seleksi Nasional Berbasis Tes (SNBT)"}
+            </Link>
+            <Link
+              href={"/information"}
+              className={cn(
+                buttonVariants({
+                  variant: "secondary",
+                }),
+                "w-full justify-start sm:justify-center",
+              )}
+            >
+              {"Info Jalur Masuk Lainnya"}
+            </Link>
+          </div>
+        </section>
+
+        <CTAContactSection />
+      </main>
+      <Footer />
+      <GlobalFooter />
+    </>
   );
 }
 
