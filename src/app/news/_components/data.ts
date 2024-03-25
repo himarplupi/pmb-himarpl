@@ -38,7 +38,7 @@ export const articles = [
     author: {
       name: "Andika Eka Kurnia",
       image:
-        "https://images.unsplash.com/photo-1708353273691-0186eaa03dc2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxMDkxMDUxOQ&ixlib=rb-4.0.3&q=80&w=300",
+        "https://raw.githubusercontent.com/himarplupi/assets-himarpl/main/article/dikdns-profile.gif",
       username: "dikdns",
     },
     publishedAt: new Date("2024-03-26 07:00:00"),

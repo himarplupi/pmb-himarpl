@@ -58,39 +58,3 @@ const articlePmb = [
     publishedAt: new Date("2024-03-26"),
   },
 ];
-
-export function CTANewsSection() {
-  return (
-    <section id="cta-news" className="mt-12">
-      {articlePmb.map((article) => (
-        <div key={article.id} className="flex flex-col gap-y-2 pt-4">
-          <span className="flex items-center gap-x-2">
-            <Avatar className="h-6 w-6">
-              <AvatarImage src={article.author.image} alt="Avatar" />
-            </Avatar>
-            <span className="text-muted-foreground">{article.author.name}</span>
-            <Circle
-              className="h-2 w-2 text-muted-foreground"
-              fill="hsl(var(--muted-foreground))"
-            />
-            <span className="text-muted-foreground">
-              {article.publishedAt.toLocaleDateString("id-ID", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
-          </span>
-          <Link href={`/news/@${article.author.username}/${article.slug}`}>
-            <h3 className="text-balance font-serif text-2xl font-semibold tracking-wide">
-              {article.title}
-            </h3>
-            <p className="line-clamp-3 text-balance text-sm leading-5 tracking-wide lg:w-[768px]">
-              {article.content}
-            </p>
-          </Link>
-        </div>
-      ))}
-    </section>
-  );
-}

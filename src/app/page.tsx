@@ -1,7 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Circle } from "lucide-react";
 import HomeBG from "@/images/home-bg.jpg";
 import { CTAContactSection, Footer, GlobalFooter } from "@/app/_components";
-import Image from "next/image";
-import { Circle } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -10,8 +11,10 @@ import {
   CardTitle,
   CardFooter,
 } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { articles } from "@/app/news/_components/data";
+import { cn, calculateReadTime, getContent } from "@/lib/utils";
 
 export default async function HomePage() {
   return (
@@ -21,7 +24,7 @@ export default async function HomePage() {
 
         <InformationSection />
 
-        <section className="container"></section>
+        <NewsSection />
 
         <CTAContactSection />
       </main>
@@ -79,13 +82,20 @@ function BannerSection() {
           </div>
 
           <div className="mt-6 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Link href="/information" className="sm:w-40">
-              <Button className="w-full">Info Pendaftaran</Button>
+            <Link
+              href="/information"
+              className={cn(buttonVariants(), "sm:w-40")}
+            >
+              Info Pendaftaran
             </Link>
-            <Link href="/contact" className="sm:w-40">
-              <Button variant="secondary" className="w-full">
-                Kontak
-              </Button>
+            <Link
+              href="/contact"
+              className={cn(
+                buttonVariants({ variant: "secondary" }),
+                "sm:w-40",
+              )}
+            >
+              Kontak
             </Link>
           </div>
         </div>
@@ -97,8 +107,8 @@ function BannerSection() {
 function InformationSection() {
   return (
     <section className="container">
-      <div className="grid w-full grid-cols-1 gap-8 py-8 sm:grid-cols-2 sm:place-items-center lg:mx-auto lg:w-[900px]">
-        <Card className="flex flex-col justify-between lg:w-96">
+      <div className="grid w-full grid-cols-1 gap-8 pb-8 pt-12 sm:grid-cols-2 sm:place-items-center lg:mx-auto lg:w-[900px]">
+        <Card className="flex h-full flex-col justify-between lg:w-96">
           <div>
             <CardHeader>
               <CardTitle className="text-center font-serif font-bold tracking-wide">
@@ -114,14 +124,15 @@ function InformationSection() {
             </CardContent>
           </div>
           <CardFooter>
-            <Link href="/information/snbp" className="w-full">
-              <Button className="w-full" variant="outline">
-                Selengkapnya
-              </Button>
+            <Link
+              href="/information/snbp"
+              className={cn(buttonVariants({ variant: "outline" }), "w-full")}
+            >
+              Selengkapnya
             </Link>
           </CardFooter>
         </Card>
-        <Card className="flex flex-col justify-between lg:w-96">
+        <Card className="flex h-full flex-col justify-between lg:w-96">
           <div>
             <CardHeader>
               <CardTitle className="text-center font-serif font-bold tracking-wide">
@@ -137,10 +148,11 @@ function InformationSection() {
             </CardContent>
           </div>
           <CardFooter>
-            <Link href="/information/snbp" className="w-full">
-              <Button className="w-full" variant="outline">
-                Selengkapnya
-              </Button>
+            <Link
+              href="/information/snbp"
+              className={cn(buttonVariants({ variant: "outline" }), "w-full")}
+            >
+              Selengkapnya
             </Link>
           </CardFooter>
         </Card>
@@ -180,6 +192,79 @@ function InformationSection() {
           </Link>
         </div>
       </div>
+    </section>
+  );
+}
+
+function NewsSection() {
+  return (
+    <section className="container py-8">
+      <Card className="mx-auto max-w-[850px]">
+        <CardHeader>
+          <CardTitle>Berita Terbaru</CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          {articles.map((article) => (
+            <div
+              key={article.id}
+              className="flex flex-col gap-y-2 rounded py-4"
+            >
+              <span className="flex items-center gap-x-2">
+                <Avatar className="h-5 w-5">
+                  <AvatarImage
+                    src={article.author.image}
+                    alt={article.author.name + " picture"}
+                  />
+                </Avatar>
+                <span className="truncate text-sm text-muted-foreground">
+                  {article.author.name}
+                </span>
+                <Circle
+                  className="h-1 w-1 text-muted-foreground md:h-2 md:w-2"
+                  fill="hsl(var(--muted-foreground))"
+                />
+                <span className="text-nowrap text-sm text-muted-foreground">
+                  {article.publishedAt.toLocaleDateString("id-ID", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+              </span>
+              <Link href={`/news/@${article.author.username}/${article.slug}`}>
+                <div className="flex-grow justify-between gap-x-4 sm:flex">
+                  <div className="w-fit">
+                    <h3 className="line-clamp-2 text-pretty font-serif text-xl font-bold capitalize leading-7 sm:text-2xl">
+                      {article.title}
+                    </h3>
+                    <p className="line-clamp-3 text-pretty text-sm leading-5 tracking-wide">
+                      {getContent(article.content)}
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 flex gap-x-2">
+                  <Badge variant="secondary" className="truncate font-normal">
+                    {article.tags[0]?.title ?? ""}
+                  </Badge>
+                  <span className="text-nowrap text-sm text-muted-foreground">
+                    {calculateReadTime(article.content)} menit baca
+                  </span>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </CardContent>
+
+        <CardFooter>
+          <Link
+            href="/news"
+            className={cn(buttonVariants({ variant: "secondary" }))}
+          >
+            Berita Lainnya
+          </Link>
+        </CardFooter>
+      </Card>
     </section>
   );
 }

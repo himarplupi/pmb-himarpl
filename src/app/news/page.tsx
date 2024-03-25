@@ -4,6 +4,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { articles, instagramPosts } from "@/app/news/_components/data";
+import { calculateReadTime, getContent, getFirstImageSrc } from "@/lib/utils";
 import LogoHIMARPL from "@/images/logo.png";
 
 export default async function NewsPage() {
@@ -108,22 +109,4 @@ export default async function NewsPage() {
       </aside>
     </main>
   );
-}
-
-function getContent(content: string) {
-  // remove html tags
-  return content.replace(/<[^>]+>/g, "");
-}
-
-function calculateReadTime(content: string) {
-  const wordsPerMinute = 200;
-  const text = getContent(content);
-  const wordsLength = text.split(" ").length;
-  return Math.ceil(wordsLength / wordsPerMinute);
-}
-
-function getFirstImageSrc(content: string) {
-  const regex = /<img.*?src="(.*?)"/;
-  const result = regex.exec(content);
-  return result?.[1];
 }
