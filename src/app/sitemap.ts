@@ -12,21 +12,24 @@ const EXTERNAL_LINKS_SITEMAP = [
   "https://rpl.upi.edu/",
 ];
 
+const routes = [
+  "",
+  "information",
+  "news",
+  "contact",
+  "software-engineering",
+  "faq",
+];
+
 // This allows us to generate a `sitemap.xml` file dynamically based on the needs of the Node.js Website
 // Next.js Sitemap Generation doesn't support `alternate` refs yet
 // @see https://github.com/vercel/next.js/discussions/55646
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const paths: Array<string> = [];
 
-  // for (const locale of availableLocaleCodes) {
-  //   const routes = await dynamicRouter.getRoutesByLanguage(locale);
-
-  //   paths.push(
-  //     ...routes.map((route) => `${baseUrlAndPath}/${locale}/${route}`),
-  //   );
-  // }
-
-  paths.push(`${baseUrlAndPath}`);
+  for (const route of routes) {
+    paths.push(`${baseUrlAndPath}/${route}`);
+  }
 
   const currentDate = new Date().toISOString();
 
