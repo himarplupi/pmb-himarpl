@@ -78,7 +78,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      {/* <GoogleTagManager gtmId="GTM-XYZ" /> */}
+      <GoogleTagManager gtmId="G-ZVGEH788MM" />
 
       <body
         className={cn(
@@ -95,7 +95,7 @@ export default async function RootLayout({
         <Toaster />
       </body>
 
-      {/* <GoogleAnalytics gaId="G-XYZ" /> */}
+      <GoogleAnalytics gaId="G-ZVGEH788MM" />
     </html>
   );
 }
