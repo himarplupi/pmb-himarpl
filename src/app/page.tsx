@@ -15,6 +15,7 @@ import { articles } from "@/app/news/_components/data";
 import { cn, calculateReadTime, getContent } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 export default async function HomePage() {
   return (
@@ -25,6 +26,28 @@ export default async function HomePage() {
         <InformationSection />
 
         <NewsSection />
+
+        <section className="container min-h-screen py-8">
+          <h2 className="mt-2 scroll-m-20 pb-2 text-center font-serif text-4xl font-bold tracking-wide">
+            Profil Rekayasa Perangkat Lunak (RPL)
+          </h2>
+
+          <div className="mx-auto mt-4 aspect-video w-full overflow-hidden rounded border border-muted md:w-[512px] lg:w-[628px]">
+            <YouTubeEmbed videoid="CYYT7pAcp-c" />
+          </div>
+
+          <div className="mt-4 flex justify-center">
+            <Link
+              href="/software-engineering"
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "mx-auto w-full text-muted-foreground sm:w-64",
+              )}
+            >
+              Mengenal RPL
+            </Link>
+          </div>
+        </section>
 
         <CTAContactSection />
       </main>
