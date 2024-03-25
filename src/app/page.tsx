@@ -1,9 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Circle } from "lucide-react";
 import HomeBG from "@/images/home-bg.jpg";
+import { Circle } from "lucide-react";
+import Image from "next/image";
 import { CTAContactSection, Footer, GlobalFooter } from "@/app/_components";
-import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -15,6 +13,8 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { articles } from "@/app/news/_components/data";
 import { cn, calculateReadTime, getContent } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function HomePage() {
   return (
