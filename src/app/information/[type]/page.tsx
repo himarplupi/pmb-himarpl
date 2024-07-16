@@ -1,6 +1,7 @@
-import { notFound } from "next/navigation";
-import { Layout } from "./_components/layout";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+import { Layout } from "./_components/layout";
 
 type Props = {
   params: { type: string };

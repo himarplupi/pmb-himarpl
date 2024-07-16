@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
+
 import { CTAContactSection } from "@/app/_components/cta-contact-section";
 import { Footer } from "@/app/_components/footer";
 import { GlobalFooter } from "@/app/_components/global-footer";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Info Pendafataran | HIMARPL",

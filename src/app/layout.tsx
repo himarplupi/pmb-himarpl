@@ -1,12 +1,13 @@
-import "@/styles/globals.css";
-
 import { Montserrat as FontSans } from "next/font/google";
 import localFont from "next/font/local";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+
+import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
-import { Toaster } from "@/components/ui/sonner";
+
 import { NavBar } from "./_components/navbar";
+
+import "@/styles/globals.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -69,6 +70,23 @@ export const metadata = {
       url: "/favicon.ico",
     },
   ],
+  metadataBase: new URL("https://pmb.himarpl.com"),
+  openGraph: {
+    title: "PMB | HIMARPL",
+    description:
+      "Penerimaan Mahasiswa Baru (PMB) RPL UPI: Informasi pendaftaran, jadwal, dan syarat PMB program studi RPL Kampus UPI di Cibiru.",
+    siteName: "PMB | HIMARPL",
+    images: "https://pmb.himarpl.com/opengraph-image.gif",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PMB | HIMARPL",
+    description:
+      "Penerimaan Mahasiswa Baru (PMB) RPL UPI: Informasi pendaftaran, jadwal, dan syarat PMB program studi RPL Kampus UPI di Cibiru.",
+    creator: "@himarpl",
+    images: ["https://pmb.himarpl.com/twitter-image.gif"], // Must be an absolute URL
+  },
 };
 
 export default async function RootLayout({
@@ -77,9 +95,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <GoogleTagManager gtmId="G-ZVGEH788MM" />
-
+    <html lang="id">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased ",
@@ -90,12 +106,10 @@ export default async function RootLayout({
         <TRPCReactProvider>
           <NavBar />
           {children}
+
+          <Toaster />
         </TRPCReactProvider>
-
-        <Toaster />
       </body>
-
-      <GoogleAnalytics gaId="G-ZVGEH788MM" />
     </html>
   );
 }

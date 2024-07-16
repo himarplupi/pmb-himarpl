@@ -1,20 +1,21 @@
-import HomeBG from "@/images/home-bg.jpg";
-import { Circle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { Circle } from "lucide-react";
+
 import { CTAContactSection, Footer, GlobalFooter } from "@/app/_components";
+import { articles } from "@/app/news/_components/data";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "@/components/ui/card";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { articles } from "@/app/news/_components/data";
-import { cn, calculateReadTime, getContent } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import Link from "next/link";
+import HomeBG from "@/images/home-bg.jpg";
+import { calculateReadTime, cn, getContent } from "@/lib/utils";
 import { YouTubeEmbed } from "@next/third-parties/google";
 
 export default async function HomePage() {

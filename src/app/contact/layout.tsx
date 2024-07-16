@@ -1,5 +1,6 @@
-import { Footer, GlobalFooter } from "@/app/_components";
 import type { Metadata } from "next";
+
+import { Footer, GlobalFooter } from "@/app/_components";
 
 export const metadata: Metadata = {
   title: "Kontak | HIMARPL",

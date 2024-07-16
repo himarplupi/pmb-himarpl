@@ -1,9 +1,11 @@
 "use client";
 
-import parse from "html-react-parser";
 import { usePathname } from "next/navigation";
+import parse from "html-react-parser";
 import { AlertTriangleIcon } from "lucide-react";
+
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+
 import type { RegistrationItem } from "../page";
 
 export function Content({ items }: { items: RegistrationItem[] }) {

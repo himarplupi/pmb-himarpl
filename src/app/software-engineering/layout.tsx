@@ -1,5 +1,6 @@
-import { CTAContactSection, Footer, GlobalFooter } from "@/app/_components";
 import type { Metadata } from "next";
+
+import { CTAContactSection, Footer, GlobalFooter } from "@/app/_components";
 
 export const metadata: Metadata = {
   title: "Rekayasa Perangkat Lunak | HIMARPL",

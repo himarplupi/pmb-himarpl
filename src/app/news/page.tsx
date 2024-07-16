@@ -1,13 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Circle } from "lucide-react";
+
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import { articles, instagramPosts } from "@/app/news/_components/data";
-import { calculateReadTime, getContent, getFirstImageSrc } from "@/lib/utils";
-import LogoHIMARPL from "@/images/logo.png";
+import { calculateReadTime, momentId } from "@/lib/utils";
+import { api } from "@/trpc/server";
 
 export default async function NewsPage() {
+  const news = await api.post.newest();
+
   return (
     <main className="container mt-16 flex min-h-screen flex-col space-y-8 md:flex-row md:space-x-12 md:space-y-0">
       <section id="news" className="md:flex-1">
@@ -15,7 +17,7 @@ export default async function NewsPage() {
           Berita Terbaru
         </h2>
         <div className="space-y-2 divide-y-2">
-          {articles.map((article) => (
+          {news.map((article) => (
             <div
               key={article.id}
               className="flex flex-col gap-y-2 rounded py-4"
@@ -23,7 +25,7 @@ export default async function NewsPage() {
               <span className="flex items-center gap-x-2">
                 <Avatar className="h-5 w-5">
                   <AvatarImage
-                    src={article.author.image}
+                    src={article.author.image ?? ""}
                     alt={article.author.name + " picture"}
                   />
                 </Avatar>
@@ -35,11 +37,7 @@ export default async function NewsPage() {
                   fill="hsl(var(--muted-foreground))"
                 />
                 <span className="text-nowrap text-sm text-muted-foreground">
-                  {article.publishedAt.toLocaleDateString("id-ID", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  {momentId(article?.publishedAt).fromNow()}
                 </span>
               </span>
               <Link href={`/news/@${article.author.username}/${article.slug}`}>
@@ -49,13 +47,13 @@ export default async function NewsPage() {
                       {article.title}
                     </h3>
                     <p className="hidden text-pretty text-sm leading-5 tracking-wide sm:line-clamp-3">
-                      {getContent(article.content)}
+                      {article.content}
                     </p>
                   </div>
-                  {getFirstImageSrc(article.content) && (
+                  {article?.image && (
                     <div className="relative mt-2 aspect-video w-full max-w-96 overflow-hidden rounded sm:w-32">
                       <Image
-                        src={getFirstImageSrc(article.content) ?? ""}
+                        src={article?.image ?? ""}
                         alt={`${article.title} thumbnail`}
                         className="object-cover object-center"
                         fill
@@ -76,7 +74,7 @@ export default async function NewsPage() {
           ))}
         </div>
       </section>
-      <aside className="hidden flex-col gap-y-2 md:flex md:w-1/5">
+      {/* <aside className="hidden flex-col gap-y-2 md:flex md:w-1/5">
         <h3 className="mt-6 scroll-m-20 font-serif text-2xl font-medium tracking-tight">
           Postingan Instagram
         </h3>
@@ -106,7 +104,7 @@ export default async function NewsPage() {
             </Link>
           </div>
         ))}
-      </aside>
+      </aside> */}
     </main>
   );
 }

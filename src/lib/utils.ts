@@ -1,5 +1,8 @@
 import { type ClassValue, clsx } from "clsx";
+import moment from "moment";
 import { twMerge } from "tailwind-merge";
+
+import "moment/locale/id";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -21,4 +24,9 @@ export function getFirstImageSrc(content: string) {
   const regex = /<img.*?src="(.*?)"/;
   const result = regex.exec(content);
   return result?.[1];
+}
+
+export function momentId(input: string | number | Date | undefined | null) {
+  moment.locale("id");
+  return moment(input);
 }

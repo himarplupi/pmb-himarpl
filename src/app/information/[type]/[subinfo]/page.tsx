@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { Layout } from "@/app/information/[type]/_components/layout";
 import { registrationTypes } from "@/app/information/[type]/page";
-import type { Metadata } from "next";
 
 type Props = {
   params: { type: string };

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { SiWhatsapp, SiInstagram } from "@icons-pack/react-simple-icons";
+
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { SiInstagram, SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 const templateText =
   "Halo, perkenalkan saya [nama kamu] dari [asal sekolah kamu] dan saya ingin bertanya tentang [tulis pertanyaan kamu]\n\n\n Terima kasih.";

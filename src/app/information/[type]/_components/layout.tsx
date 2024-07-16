@@ -1,9 +1,11 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
+
+import type { RegistrationType } from "../page";
+
 import { Content } from "./content";
 import { SidebarNav } from "./sidebar-nav";
-import type { RegistrationType } from "../page";
 
 export function Layout({
   registrationType,

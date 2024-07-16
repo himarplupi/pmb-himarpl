@@ -1,13 +1,14 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ContactForm } from "@/app/_components";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
-import { SiInstagram, SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { Mail, MapPin } from "lucide-react";
+
+import { ContactForm } from "@/app/_components";
 import { buttonVariants } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactBG from "@/images/contact-bg.jpg";
 import ContactBG2 from "@/images/contact-bg-2.jpg";
-import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { SiInstagram, SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 export default async function ContactPage() {
   return (

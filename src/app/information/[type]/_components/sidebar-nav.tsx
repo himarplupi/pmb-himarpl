@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { MoreHorizontal } from "lucide-react";
+
 import { buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -16,11 +17,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { MoreHorizontal } from "lucide-react";
+import { cn } from "@/lib/utils";
+
 import type { RegistrationItem } from "../page";
 
 export function SidebarNav({
-  className,
   items,
   ...props
 }: { items: RegistrationItem[] } & React.HTMLAttributes<HTMLElement>) {

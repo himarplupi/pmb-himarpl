@@ -3,13 +3,11 @@ import type { MetadataRoute } from "next";
 import { env } from "@/env";
 
 // This is the combination of the Application Base URL and Base PATH
-const baseUrlAndPath = `${env.BASE_URL}${env.BASE_PATH}`;
+const baseUrlAndPath = `${env.BASE_URL}`;
 
 const EXTERNAL_LINKS_SITEMAP = [
-  "https://himarpl.com/",
+  "https://www.himarpl.com/",
   "https://blog.himarpl.com/",
-  "https://upi.edu/",
-  "https://rpl.upi.edu/",
 ];
 
 const routes = [
