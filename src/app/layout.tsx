@@ -1,9 +1,9 @@
 import { Montserrat as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 
+import { CSPostHogProvider, Providers } from "@/components/providers";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import { TRPCReactProvider } from "@/trpc/react";
 
 import { NavBar } from "./_components/navbar";
 
@@ -96,20 +96,22 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased ",
-          fontSans.variable,
-          fontSerif.variable,
-        )}
-      >
-        <TRPCReactProvider>
-          <NavBar />
-          {children}
+      <CSPostHogProvider>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable,
+            fontSerif.variable,
+          )}
+        >
+          <Providers>
+            <NavBar />
+            {children}
 
-          <Toaster />
-        </TRPCReactProvider>
-      </body>
+            <Toaster />
+          </Providers>
+        </body>
+      </CSPostHogProvider>
     </html>
   );
 }

@@ -3,9 +3,8 @@ import Link from "next/link";
 import { Circle } from "lucide-react";
 
 import { CTAContactSection, Footer, GlobalFooter } from "@/app/_components";
-import { articles } from "@/app/news/_components/data";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -15,7 +14,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import HomeBG from "@/images/home-bg.jpg";
-import { calculateReadTime, cn, getContent } from "@/lib/utils";
+import { calculateReadTime, cn, momentId } from "@/lib/utils";
+import { api } from "@/trpc/server";
 import { YouTubeEmbed } from "@next/third-parties/google";
 
 export default async function HomePage() {
@@ -220,7 +220,9 @@ function InformationSection() {
   );
 }
 
-function NewsSection() {
+async function NewsSection() {
+  const news = await api.post.newest();
+
   return (
     <section className="container py-8">
       <Card className="mx-auto max-w-[850px]">
@@ -229,7 +231,15 @@ function NewsSection() {
         </CardHeader>
 
         <CardContent>
-          {articles.map((article) => (
+          {news.length === 0 && (
+            <div className="flex min-h-32 items-center justify-center">
+              <p className="text-pretty text-center">
+                Tidak ada berita terbaru
+              </p>
+            </div>
+          )}
+
+          {news.map((article) => (
             <div
               key={article.id}
               className="flex flex-col gap-y-2 rounded py-4"
@@ -237,7 +247,7 @@ function NewsSection() {
               <span className="flex items-center gap-x-2">
                 <Avatar className="h-5 w-5">
                   <AvatarImage
-                    src={article.author.image}
+                    src={article.author.image ?? ""}
                     alt={article.author.name + " picture"}
                   />
                 </Avatar>
@@ -249,28 +259,35 @@ function NewsSection() {
                   fill="hsl(var(--muted-foreground))"
                 />
                 <span className="text-nowrap text-sm text-muted-foreground">
-                  {article.publishedAt.toLocaleDateString("id-ID", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  {momentId(article.publishedAt).fromNow()}
                 </span>
               </span>
-              <Link href={`/news/@${article.author.username}/${article.slug}`}>
+              <Link
+                href={`https://blog.himarpl.com/@${article.author.username}/${article.slug}`}
+              >
                 <div className="flex-grow justify-between gap-x-4 sm:flex">
                   <div className="w-fit">
                     <h3 className="line-clamp-2 text-pretty font-serif text-xl font-bold capitalize leading-7 sm:text-2xl">
                       {article.title}
                     </h3>
                     <p className="line-clamp-3 text-pretty text-sm leading-5 tracking-wide">
-                      {getContent(article.content)}
+                      {article.content}
                     </p>
                   </div>
                 </div>
                 <div className="mt-4 flex gap-x-2">
-                  <Badge variant="secondary" className="truncate font-normal">
-                    {article.tags[0]?.title ?? ""}
-                  </Badge>
+                  {article.tags.map((tag) => (
+                    <Link
+                      href={`https://blog.himarpl.com/tag/${tag.slug}`}
+                      key={tag.id}
+                      className={cn(
+                        badgeVariants({ variant: "secondary" }),
+                        "truncate font-normal",
+                      )}
+                    >
+                      {tag.title}
+                    </Link>
+                  ))}
                   <span className="text-nowrap text-sm text-muted-foreground">
                     {calculateReadTime(article.content)} menit baca
                   </span>
@@ -282,7 +299,7 @@ function NewsSection() {
 
         <CardFooter>
           <Link
-            href="/news"
+            href="https://blog.himarpl.com/tag/berita"
             className={cn(buttonVariants({ variant: "secondary" }))}
           >
             Berita Lainnya

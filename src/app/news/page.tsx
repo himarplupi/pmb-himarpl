@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Circle } from "lucide-react";
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { calculateReadTime, momentId } from "@/lib/utils";
+import { badgeVariants } from "@/components/ui/badge";
+import { calculateReadTime, cn, momentId } from "@/lib/utils";
 import { api } from "@/trpc/server";
 
 export default async function NewsPage() {
@@ -17,6 +17,14 @@ export default async function NewsPage() {
           Berita Terbaru
         </h2>
         <div className="space-y-2 divide-y-2">
+          {news.length === 0 && (
+            <div className="flex min-h-32 items-center justify-center">
+              <p className="text-pretty text-center">
+                Tidak ada berita terbaru
+              </p>
+            </div>
+          )}
+
           {news.map((article) => (
             <div
               key={article.id}
@@ -40,7 +48,9 @@ export default async function NewsPage() {
                   {momentId(article?.publishedAt).fromNow()}
                 </span>
               </span>
-              <Link href={`/news/@${article.author.username}/${article.slug}`}>
+              <Link
+                href={`https://blog.himarpl.com/@${article.author.username}/${article.slug}`}
+              >
                 <div className="flex-grow justify-between gap-x-4 sm:flex">
                   <div className="w-fit">
                     <h3 className="line-clamp-2 text-pretty font-serif text-xl font-bold capitalize leading-7 sm:text-2xl">
@@ -62,9 +72,18 @@ export default async function NewsPage() {
                   )}
                 </div>
                 <div className="mt-4 flex gap-x-2">
-                  <Badge variant="secondary" className="truncate font-normal">
-                    {article.tags[0]?.title ?? ""}
-                  </Badge>
+                  {article.tags.map((tag) => (
+                    <Link
+                      href={`https://blog.himarpl.com/tag/${tag.slug}`}
+                      key={tag.id}
+                      className={cn(
+                        badgeVariants({ variant: "secondary" }),
+                        "truncate font-normal",
+                      )}
+                    >
+                      {tag.title}
+                    </Link>
+                  ))}
                   <span className="text-nowrap text-sm text-muted-foreground">
                     {calculateReadTime(article.content)} menit baca
                   </span>

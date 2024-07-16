@@ -18,8 +18,8 @@ export function NavBar() {
 
   return (
     !hideNavbarOnRoutes.includes(pathname) && (
-      <nav className="fixed top-0 z-10 w-full drop-shadow-md">
-        <div className="container flex items-center justify-between bg-primary-foreground py-2 backdrop-blur-md">
+      <nav className="fixed left-0 right-0 top-0 z-10 w-screen bg-background drop-shadow-md backdrop-blur-md">
+        <div className="container flex items-center justify-between py-2 ">
           <div className="flex items-center gap-x-5">
             <div className="flex items-center gap-x-2">
               <NavSheet>
