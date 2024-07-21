@@ -18,6 +18,8 @@ import { calculateReadTime, cn, momentId } from "@/lib/utils";
 import { api } from "@/trpc/server";
 import { YouTubeEmbed } from "@next/third-parties/google";
 
+export const revalidate = 3600;
+
 export default async function HomePage() {
   return (
     <>

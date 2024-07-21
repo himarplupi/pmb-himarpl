@@ -8,6 +8,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { calculateReadTime, cn, momentId } from "@/lib/utils";
 import { api } from "@/trpc/server";
 
+export const revalidate = 3600;
+
 export default async function NewsPage() {
   const news = await api.post.newest();
 
