@@ -4,6 +4,7 @@ import { Circle } from "lucide-react";
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { badgeVariants } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { calculateReadTime, cn, momentId } from "@/lib/utils";
 import { api } from "@/trpc/server";
 
@@ -91,6 +92,20 @@ export default async function NewsPage() {
               </Link>
             </div>
           ))}
+        </div>
+
+        <div className="flex items-center justify-center">
+          <Link
+            className={cn(
+              buttonVariants({
+                variant: "secondary",
+              }),
+              "w-full max-w-80",
+            )}
+            href="https://blog.himarpl.com/tag/berita"
+          >
+            Lihat Berita Lainnya
+          </Link>
         </div>
       </section>
       {/* <aside className="hidden flex-col gap-y-2 md:flex md:w-1/5">
