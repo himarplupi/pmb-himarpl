@@ -1,29 +1,66 @@
-# Create T3 App
+<p align="center">
+  <br />
+  <a href="https://www.himarpl.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.5/images/logo/logo-landscape-dark.png">
+      <img src="https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.5/images/logo/logo-landscape-light.png" width="200px">
+    </picture>
+  </a>
+</p>
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+<p align="center">
+  <a href="https://pmb.himarpl.com">pmb.himarpl.com</a> Website built using Next.js with <a href="https://create.t3.gg/en/introduction">T3 Stack</a>.
+</p>
 
-## What's next? How do I make an app with this?
+<p align="center">
+  <a title="MIT License" href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" />
+  </a>
+  <a title="Vercel" href="https://vercel.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-white">
+      <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black" alt="Powered by Vercel">
+    </picture>
+  </a>
+  <br />
+</p>
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## What is this repo?
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+[pmb.himarpl.com](https://pmb.himarpl.com/) by [HIMARPL's Communication and Information Department](https://www.himarpl.com/about/be/kominfo) is the official website of HIMARPL for New Student Admission Information. This repo is the source code for that website. Built using [Next.js](https://nextjs.org), a React Framework.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Installation
 
-## Learn More
+Follow the getting started guide from the [Contributing Guide][] to set up the project locally.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+```bash
+npm ci
+npm run dev
+```
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Contributing
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+This project adopts HIMARPL's [Code of Conduct][].
+Complete infrastructure design documentation can be found at [HIMARPL Documentation Website](https://docs.himarpl.com).
 
-## How do I deploy this?
+> \[!NOTE]\
+> We recommend reading all Relevant Links below before making code changes; Including Dependency changes, Content changes, and Code changes.
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### Deployment
+
+The website is automatically deployed to [Vercel](https://vercel.com) through GitHub Action App integration when there's a new push to the `main` branch.
+
+Current integration is owned and managed by the Website Team at HIMARPL's Communication and Information Department.
+
+## Relevant Links
+
+[Code of Conduct][]
+
+[Contributing Guide][]
+
+## Acknowledgments
+
+- Thanks to all contributors and collaborators who develop this project.
+
+[code of conduct]: https://github.com/himarplupi/pmb-himarpl/blob/main/CODE_OF_CONDUCT.md
+[contributing guide]: https://github.com/himarplupi/pmb-himarpl/blob/main/CONTRIBUTING.md
